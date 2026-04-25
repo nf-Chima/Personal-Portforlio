@@ -1,162 +1,182 @@
-/* --- Global Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Crucial: padding won't increase element size */
-    text-decoration: none;   
-}
-/* Defining my colors (custom) */
+/* --- Global Variables & Reset --- */
 :root {
     --navy: #1A2A6C;
     --ash: #F4F4F4;
     --charcoal: #333333;
     --gold: #FFD700;
-}
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: 'Open Sans', sans-serif;
-    color: var(--charcoal);
+    --white: #ffffff;
 }
 
-/* --- Header & Navigation --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: var(--white);
+}
+
+.container { padding: 80px 10%; }
+
+.section-title { text-align: center; margin-bottom: 40px; }
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: var(--navy);
+    margin: 10px auto;
+}
+
+/* --- Header & Logo --- */
 .header {
-    background-color: var(--navy); /* Added your chosen Navy background */
+    background: var(--navy);
     height: 5rem;
     display: flex;
-    justify-content: space-between; /* Pushes Logo left, Nav right */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 5%; /* Adds breathing room on sides */
+    padding: 0 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.header .logo {
-    width: 4rem;
-    height: 4rem;
+.logo {
+    width: 3.5rem;
+    height: 3.5rem;
     border: 2px solid var(--gold);
-    border-radius: 50%; /* standard circle */
-    background-color: var(--white);
-    display: flex; /* center the image */
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* To allow container hide objects overflow in it */
-}
-
-.logo img {
-    width: 4rem;
-    height: 5rem;
     border-radius: 50%;
+    overflow: hidden;
+    background: var(--white);
 }
 
-/* --- Mobile Navigation Logic --- */
-.hamburger {
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    display: block;
-}
+.logo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- Navigation --- */
 .nav-links {
-    display: none; /* Hidden until JS toggles .active */
     list-style: none;
+    display: none; /* Mobile default */
     flex-direction: column;
     position: absolute;
     top: 5rem;
     right: 0;
-    width: 60%; 
-    background-color: var(--navy);
-    padding: 2rem;
+    width: 70%;
+    background: var(--navy);
+    padding: 20px;
     border-bottom: 3px solid var(--gold);
-    border-bottom-left-radius: 1rem;
 }
 
-.nav-links.active {
-    display: flex; /* Shown when JS class is added */
-}
-
-.nav-links li {
-    padding: 15px 0;
-    text-align: center;
-}
+.nav-links.active { display: flex; }
 
 .nav-links a {
-    color: white;
-    font-weight: bold;
-    padding: 6px 10px;
-    display: inline-block;
-    transition: all;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 0;
+    display: block;
 }
 
-.nav-links a:hover {
-    color: var(--gold); /* Your hover choice */
-}
+.hamburger { color: var(--white); font-size: 1.5rem; cursor: pointer; }
 
-/* --- Desktop Navigation --- */
-.generalnav {
-    display: none; /* Hidden on mobile */
-}
-
-/* Desktop Media Query */
-@media (min-width: 1024px) {
-    .hamburger {
-        display: none; /* Hide hamburger on desktop */
-    }
-
-    .generalnav {
-        display: block;
-    }
-
-    .generalnav ul {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-    }
-
-    .generalnav a {
-        color: white;
-         padding: 6px 10px;
-         display: inline-block;
-         transition: 0.3s;
-    }
-
-    .generalnav a:hover {
-        color: white;  
-        border-bottom: 0.5px solid #FFD700;
-        border-right: 0.2px solid #F4F4F4;
-        transition: ease-in 0.2s;
-    }
-}
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
+    height: 80vh;
+    background: url('/images/hero2.jpeg') center/cover no-repeat;
     position: relative;
-    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--white);
-    overflow: hidden; 
-}
-.hero .hero-bg {
-    display: grid;
-    grid-column: 2fr;
-    
-}
-/* --- Overlay & Content Layers --- */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(26, 42, 108, 0.6); /* Navy overlay at 60% opacity */
-    z-index: 2; /* Middle layer */
 }
 
-.hero-content {
-    position: relative;
-    z-index: 3; /* Top layer (text is always visible) */
-    padding: 0 20px;
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 42, 108, 0.7);
+}
+
+.hero-content { position: relative; z-index: 5; padding: 0 20px; }
+
+.hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; }
+
+.btn {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 12px 30px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* --- Skills Section (Dark Variation) --- */
+.skill-section { background: var(--navy); color: var(--white); padding: 80px 10%; }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 3px solid var(--gold);
+}
+
+.skill-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+
+/* --- Projects Grid --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--ash);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.project-card:hover { transform: translateY(-10px); background: var(--white); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+.tags span {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+/* --- Footer --- */
+.footer { background: var(--charcoal); color: var(--white); text-align: center; padding: 40px; }
+
+/* --- Desktop Logic --- */
+@media (min-width: 1024px) {
+    .hamburger { display: none; }
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        width: auto;
+    }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a:hover { color: var(--gold); }
 }
