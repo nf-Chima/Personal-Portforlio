@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chima Franklin | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -11,9 +12,8 @@
 
     <header class="header">
         <div class="logo">
-            <img src="images/profile.jpeg" alt="My Profile">
+            <img src="images/profile.jpeg" alt="Chima Franklin Logo">
         </div>
-        
         <nav class="navbar">
             <div class="hamburger" id="hamburger-menu">
                 <i class="fas fa-bars"></i>
@@ -32,12 +32,12 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Chima Franklin Nnaji</h1>
-                <p>IT & Cloud Engineer | Full-Stack Developer in Training</p>
-                <a href="#project" class="btn">View My Journey</a>
+                <p>IT & Cloud Engineer | Web Developer in Training</p>
+                <a href="#project" class="btn">View My Work</a>
             </div>
         </section>
 
-       <section id="about" class="about">
+        <section id="about" class="about">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-grid">
@@ -55,45 +55,59 @@
 
         <section id="skill" class="skill-section">
             <div class="container">
-                <h2 class="section-title white-text">Technical Skills</h2>
-                <div class="flex-container">
-                    <div class="skill-card">
+                <h2 class="section-title white-text">My Skills</h2>
+                <div class="skills-grid">
+                    <article class="skill-card">
                         <i class="fab fa-html5"></i>
-                        <h3>Frontend</h3>
-                        <p>HTML5, CSS3, and Responsive Design</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-server"></i>
-                        <h3>DevOps</h3>
-                        <p>Terraform, Azure, and Git</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Security</h3>
-                        <p>CyberOps and Cloud Security</p>
-                    </div>
+                        <h3>HTML5</h3>
+                    </article>
+                    <article class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                    </article>
+                    <article class="fab fa-git-alt">
+                        <i class=""></i>
+                        <h3>Git & GitHub</h3>
+                    </article>
+                    <article class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>VS Code</h3>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="project" class="project">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="flex-container">
-                    <div class="project-card">
-                        <h3>Telos Africa</h3>
-                        <p>A platform promoting tech awareness across Africa.</p>
-                        <p class="project-tags">HTML, CSS, Git</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Infrastructure Lab</h3>
-                        <p>Automated Azure cloud deployments using Terraform.</p>
-                        <p class="project-tags">Terraform, Azure</p>
-                    </div>
+                <h2 class="section-title">My Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-img-box">
+                            <img src="images/project1.jpg" alt="Travel Agency Website">
+                            <div class="project-overlay">
+                                <p>A responsive site for booking tours.</p>
+                            </div>
+                        </div>
+                        <h3>Travel Agency Website</h3>
+                        <p>A multi-page site built to showcase destination packages.</p>
+                        <p class="tech-used">HTML, CSS, Flexbox</p>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-img-box">
+                            <img src="images/project2.jpg" alt="Restaurant Website">
+                            <div class="project-overlay">
+                                <p>Dynamic menu display and booking.</p>
+                            </div>
+                        </div>
+                        <h3>Restaurant Website</h3>
+                        <p>A professional layout for a high-end food brand.</p>
+                        <p class="tech-used">CSS Grid, HTML5</p>
+                    </article>
                 </div>
             </div>
         </section>
-
+<!-- contact section  -->
         <section id="contact" class="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
@@ -101,11 +115,11 @@
                     <div class="contact-info">
                         <h3>Contact Information</h3>
                         <p>I am always open to discussing new projects or creative ideas.</p>
-                        <p><i class="fas fa-envelope"></i> nicfranklinchima@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> yourname@example.com</p>
                         <div class="social-links">
-                            <a href="https://linkedin.in/chimannaji">Chima Nnaji<i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/nf-Chima/">Chima Nnaji<i class="fab fa-github"></i></a>
-                            <a href="#">Chima Nnaji<i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                     <form class="contact-form">
@@ -123,7 +137,8 @@
         <p>&copy; 2026 Nnaji Chima Franklin. All Rights Reserved.</p>
     </footer>
 
-    <!-- I don't have the knowledge of JS yet - The codes below were copied to help me build the hamburger and it's features -->
+
+    <!-- This is not part of the project requirement. I just added it to make my  hamburger responsive (NB: it was copied - I don't jave JS knowledge yet)  -->
     <script>
         const hamburger = document.getElementById('hamburger-menu');
         const navList = document.getElementById('nav-list');
